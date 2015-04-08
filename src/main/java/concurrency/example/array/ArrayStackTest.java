@@ -42,10 +42,8 @@ public class ArrayStackTest {
 	
 	@Test
 	public void arrayDeque(){
-//		java.util.ArrayDeque<?> deque;
 		ArrayDeque<Integer> arrayDeque = new ArrayDeque<Integer>();
 		for(int i = 0; i < 10; i++){
-//			arrayDeque.add(i,Integer.valueOf(i));
 			arrayDeque.add(i);
 		}
 		
