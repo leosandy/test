@@ -39,6 +39,17 @@ public class ArrayStack<T> {
 		n++;
 	}
 	
+	public void add(int i,T x){
+		if(i < 0 || i > n - 1) throw new IndexOutOfBoundsException();
+		if( n> (a.length * 0.75)){
+			//TODO 当超过3/4时，扩容
+			resize();
+		}
+		 System.arraycopy(a, i, a, i+1, n - i);
+		a[i] = x;
+		n++;
+	}
+	
 	/**
 	 * 
 	 * 功能:获取
@@ -96,6 +107,15 @@ public class ArrayStack<T> {
 		
 		return x;
 		
+	}
+	
+	public String display(){
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < size();i++){
+			sb.append(a[i]).append(",");
+		}
+		sb = sb.deleteCharAt(sb.length() - 1);
+		return sb.toString();
 	}
 	
 	@SuppressWarnings("unchecked")
